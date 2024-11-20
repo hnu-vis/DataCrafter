@@ -1,0 +1,96 @@
+**/public/images/
+
+demo/
+
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Environment variables
+.env
+*.env
+.env.*
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.venv/
+
+# Flask cache and instance folder
+instance/
+*.sqlite3
+
+# Node Modules
+node_modules/
+
+# Vite build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+logs/
+log/
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Optional npm cache directory
+.npm
+
+# Output of tests and coverage reports
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Yarn / PNPM lock files if using npm
+yarn.lock
+pnpm-lock.yaml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pipfile and lock if using pipenv (optional)
+Pipfile
+Pipfile.lock
+
+# PyCharm settings
+.idea/
+
+# pytest configurations
+.cache/
+.tox/
+
+# Profiling data
+*.prof
+
+# Migrations (optional)
+migrations/

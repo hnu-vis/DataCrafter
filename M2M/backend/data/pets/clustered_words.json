@@ -1,0 +1,57 @@
+{
+  "cluster-1": [
+    "floor",
+    "room",
+    "fur",
+    "carpet",
+    "bed",
+    "tongue",
+    "rug"
+  ],
+  "cluster-2": [
+    "couch",
+    "coat",
+    "window",
+    "chair",
+    "table",
+    "paw"
+  ],
+  "cluster-3": [
+    "eye",
+    "camera",
+    "toy",
+    "head",
+    "person",
+    "box",
+    "face",
+    "stone",
+    "wall"
+  ],
+  "cluster-4": [
+    "grass",
+    "flower",
+    "sunlight",
+    "garden",
+    "snow",
+    "field",
+    "park",
+    "landscape",
+    "tree",
+    "ball",
+    "foliage"
+  ],
+  "cluster-5": [
+    "pug"
+  ],
+  "cluster-6": [
+    "Shiba_inu",
+    "Samoyed"
+  ],
+  "cluster-7": [
+    "beagle"
+  ],
+  "cluster-8": [
+    "Bengal",
+    "kitten"
+  ]
+}

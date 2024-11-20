@@ -1,0 +1,14 @@
+Experiment Configurations: 
+Dataset: pets Epochs: 1000 Batch Size: 100 
+Learning rate: 0.001000 Optimizer: adam
+
+Epoch 100/1000, Train Loss: 5.33798, 
+Epoch 200/1000, Train Loss: 5.17645, 
+Epoch 300/1000, Train Loss: 5.08417, 
+Epoch 400/1000, Train Loss: 5.28565, 
+Epoch 500/1000, Train Loss: 5.16509, 
+Epoch 600/1000, Train Loss: 5.28613, 
+Epoch 700/1000, Train Loss: 5.07694, 
+Epoch 800/1000, Train Loss: 5.37829, 
+Epoch 900/1000, Train Loss: 5.32552, 
+Epoch 1000/1000, Train Loss: 5.31352, 
