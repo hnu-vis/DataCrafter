@@ -20,7 +20,7 @@ exp_params:
   text_text_loss: 0.00001
   stability_loss: 0
   init_epoch: 700
-  base_path: "/root/M2M/backend/data"
+  base_path: "/root/DataCrafter/M2M/backend/data"
 
 training_params:
   epoch_nums: 1000

@@ -1,22 +1,10 @@
 # Expansion Vis
 
-This project consists of a frontend built with [Vite](https://vitejs.dev/), a backend built with [Flask](https://flask.palletsprojects.com/), and a demo environment. This README provides an overview of the project's structure, setup instructions, and how to run the demo.
-
-## Table of Contents
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-  - [Requirements](#requirements)
-  - [Setup](#setup)
-  - [Running the Demo](#running-the-demo)
-- [Project Structure](#project-structure)
-- [Frontend Development](#frontend-development)
-- [Backend Development](#backend-development)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Project Structure
 
-```
+This project includes a front-end environment built with Vite and a back-end environment built with Flask. Before getting started, please download the [demo data]() and place it in the root directory of this project.
+
+```bash
 .
 ├── backend/         # Backend folder (Flask project)
 ├── frontend/        # Frontend folder (Vite project)
@@ -25,59 +13,48 @@ This project consists of a frontend built with [Vite](https://vitejs.dev/), a ba
 └── README.md        # Project documentation
 ```
 
-### Frontend
+## Frontend
 
-The `frontend` folder contains the Vite-based frontend code. It is responsible for the user interface and communicates with the Flask backend via HTTP requests.
+1. Navigate to the `frontend` folder and install dependencies:
 
-### Backend
+   ```bash
+   npm install
+   ```
 
-The `backend` folder contains the Flask-based backend code, which provides an API that the frontend can interact with. It also interacts with demo data for testing purposes.
+2. Configure the static file directory, which is the location of the `demo` folder. In the `frontend/vite.config.ts` file, update the `publicDir` to the actual path of the `demo` folder.
 
-### Demo
+3. Start the development server:
 
-The `demo` folder holds sample data used to demonstrate the functionality of the frontend and backend without needing full deployment or database integration.
+   ```bash
+   npm run dev
+   ```
 
-## Getting Started
+   The frontend will run on `http://localhost:8081`.
 
-### Requirements
+## Backend
 
-- [Node.js](https://nodejs.org/) (for the frontend)
-- [Python 3.x](https://www.python.org/) (for the backend)
-- [Flask](https://flask.palletsprojects.com/) and other backend dependencies
-- Bash terminal (for running `run_demo.sh`)
+1. Navigate to the `backend` folder and install dependencies:
 
-### Setup
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. **Clone the Repository**
-    ```bash
-    git clone <your-repository-url>
-    cd <project-directory>
+2. Fix a historical bug in the `flask_script` package: In the `__init__.py` file of this package, replace the line:
+
+    ```python
+    from flask._compat import text_type
     ```
 
-2. **Install Frontend Dependencies**
-    ```bash
-    cd frontend
-    npm install
+    at line 15 with:
+
+    ```python
+    from flask_script._compat import text_type
     ```
 
-3. **Install Backend Dependencies**
-    ```bash
-    cd ../backend
-    python3 -m venv venv
-    source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
+3. Start the backend server:
 
-### Running the Demo
+   ```bash
+   python manager.py run
+   ```
 
-To run the project with demo data, simply execute the `run_demo.sh` script from the project’s root directory:
-
-```bash
-./run_demo.sh
-```
-
-This script will:
-- Start the Flask backend server.
-- Start the Vite development server for the frontend.
-
-After running the script, the project should be accessible at `http://localhost:3000` (or the port specified by the frontend configuration).
+   The backend will run on `http://localhost:8082`.

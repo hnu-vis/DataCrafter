@@ -1,72 +1,32 @@
-# DataCrafter
+# Usage Instructions
 
-This is the source code for our paper "Human-Guided Image Generation for Small-Scale Training Datasets Expansion."
-
-## Install environment and run
-
-### Option 1: Docker (recommended)
-1. The easiest way to install a environment to run the demo is to use docker. The image `chencjgene/actlocalizer-run:latest` contains the source codes and data, and have the dependencies installed. You can pull and run the image by:
+## Using Demo Data (Pets Dataset)
+If you are using the demo data (Pets dataset), the required data and files have already been saved in this project. You only need to run the following command to obtain the results:
 
 ```sh
-$ docker pull chencjgene/actlocalizer-run:latest
-```
-2. Run the docker image:
-   
-```sh
-$ docker run -p 20222:20222 -p 30221:30221 -it chencjgene/actlocalizer-run:latest
+$ python train.py
 ```
 
-3. Run backend
+## Using Your Own Data
+If you need to use your own data, you must run `/experiments/tree_cut.py` to generate intermediate data. The following steps must be completed:
 
-```sh
-$ cd /root/ActLocalizer/
-$ nohup python manager.py run 30221 &
+### Fill in the Actual Information
+You should provide your personal API key and the actual data path at lines 769 and 770 in the `tree_cut.py` file. For example:
+
+```python
+api_key = "your_api_key"
+image_folder = "your_image_folder"
 ```
 
-4. Run frontend
-
-```sh
-$ cd vis
-$ npm install (it will take a while)
-$ npm run serve
-```
-
-5. Visit http://localhost:20222/ in a browser.
-
-
-
-### Option 2: Install with python and node.js
-1. This project uses [python 3.10](https://www.python.org/), [cuda 11.8](https://www.python.org/), and [torch 2.3.0](https://www.python.org/). Go check it out if you don't have it installed.
-
-2. install python package.
-```sh
-$ pip install -r requirements.txt
-$ pip install torch
-```
-3. Download the repo
-
-4. Download demo data from [here](https://drive.google.com/file/d/1EZ6ivfi4xJVphaY0WPkMsOm3SGuD-uDR/view?usp=sharing), and unpack it in the root folder 
-
-5. Run backend
+### Generate Intermediate Data
+Run the following command to generate the intermediate data:
 
 ```sh
-$ nohup python manager.py run 30221 &
+$ python /experiments/tree_cut.py
 ```
 
-6. Run frontend
+After completing these steps, you can find all the generated intermediate data files in the `backend/data` directory. Then, you can run the following command to obtain the results:
 
 ```sh
-$ cd vis
-$ npm install (it will take a while)
-$ npm run serve
+$ python train.py
 ```
-
-7. Visit http://localhost:20222/ in a browser.
-
-
-
-## Contact
-If you have any problem about this code, feel free to contact
-- changjianchen.me@gmail.com
-
-or describe your problem in Issues.

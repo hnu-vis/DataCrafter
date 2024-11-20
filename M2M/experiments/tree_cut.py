@@ -84,7 +84,7 @@ class TreeNode:
 
 
 class HierarchicalTree:
-    def __init__(self, base_path,root_name):
+    def __init__(self, base_path,root_name,api_key):
         self.root = TreeNode(root_name)
         self.high_level_features = None
         self.tree_dict = {}
@@ -98,6 +98,8 @@ class HierarchicalTree:
         self.word_frequency = None
         self.node_frequency = {}
         self.base_path = base_path
+        self.api_key = api_key
+        
 
     def create_tree(self, data, parent):
         if isinstance(data, dict):
@@ -244,7 +246,7 @@ class HierarchicalTree:
 
     def get_high_level_word(self, words):
         client = OpenAI(
-            api_key="your_api_key",
+            api_key=self.api_key,
             base_url="https://api.openai.com/v1",
         )
         prompt = f"Here are some words: {', '.join(words)}. Please only provide a high-level word, preferably a noun, to better summarize the overall meaning of these words. No additional answers are required."
@@ -488,10 +490,11 @@ class HierarchicalTree:
 
 
 class Files:
-    def __init__(self, name, device, base_path):
+    def __init__(self, name, device, base_path,api_key):
         self.name = name
         self.device = device
         self.base_path = base_path
+        self.api_key = api_key
 
     def get_wordnet_pos(self, word):
         tag = nltk.pos_tag([word])[0][1][0].upper()
@@ -592,10 +595,7 @@ class Files:
     def get_captions(self, image_folder):
 
         # OpenAI API Key
-        api_key = "your_api_key"
-
-        # Folder containing the images
-        image_folder = "your_image_folder"
+        api_key = self.api_key
 
         # Send requests to the OpenAI API for each image and save responses
         save_path = "{}/{}/captions.json".format(self.base_path, self.name)
@@ -665,7 +665,7 @@ class Files:
                 base64_image = encode_image(image_path)
                 payload = generate_payload(base64_image)
                 response = requests.post(
-                    "https://api.gptniux.com/v1/chat/completions",
+                    "https://api.openai.com/v1",
                     headers=headers,
                     json=payload,
                 )
@@ -766,22 +766,22 @@ class Files:
 
 if __name__ == "__main__":
     base_path = "/root/M2M/backend/data"
-    files = Files("pets", "cuda", base_path)
-    
-    # files.get_captions("pets")
-    # files.get_frequency_and_images_info()
+    api_key = "your_api_key"
+    image_folder= "your_image_folder"
+    # get the captions and frequency
+    files = Files("pets", "cuda", base_path, api_key)
+    files.get_captions("pets",image_folder)
+    files.get_frequency_and_images_info()
     files.get_words_per_class()
-    # files.extract_features()
+    files.extract_features()
     
-    tree = HierarchicalTree(base_path,"root")
+    
+    tree = HierarchicalTree(base_path,"root",api_key)
     tree.prepare_info("pets")
-    
-    
-    # # only conduct cluster once
-    # tree.kmeans_clustering(8)
-    # tree.wirte_down_high_level_clusters()
+    # only conduct cluster once
+    tree.kmeans_clustering(8)
+    tree.wirte_down_high_level_clusters()
     # if you have already conducted the cluster, you can exegesis the top two lines and run the following code
-    
     tree_dict = tree.load_high_level_clusters()
     root = tree.create_hierarchy()
     tree.get_node_features()
