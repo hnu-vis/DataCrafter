@@ -5,7 +5,7 @@ This is the source code for our paper "Human-Guided Image Generation for Small-S
 ## Install environment and run
 
 ### Option 1: Docker (recommended)
-1. The easiest way to install a environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from here [datacrafter-run.tar](googledrive). You can load and start the image with the following command.
+1. The easiest way to install a environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](googledrive). You can load and start the image with the following command.
 
 ```sh
 $ docker load -i datacrafter-run.tar
