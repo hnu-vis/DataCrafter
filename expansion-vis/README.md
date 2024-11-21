@@ -2,7 +2,7 @@
 
 ## Project Structure
 
-This project includes a front-end environment built with Vite and a back-end environment built with Flask. Before getting started, please download the [demo data]() and place it in the root directory of this project.
+This project includes a front-end environment built with Vite and a back-end environment built with Flask. Before getting started, please download the [demo data](https://drive.google.com/file/d/1se-uJddNTuUKAenlMDAu4dL99Xi-YjrT/view?usp=drive_link) and place it in the root directory of this project.
 
 ```bash
 .

@@ -5,7 +5,7 @@ This is the source code for our paper "Human-Guided Image Generation for Small-S
 ## Install environment and run
 
 ### Option 1: Docker (recommended)
-1. The easiest way to install a environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](googledrive). You can load and start the image with the following command.
+1. The easiest way to install a environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](https://drive.google.com/file/d/1-KQuDaHJ4JtRt-w98Qhw0cefX8iOIX0g/view?usp=drive_link). You can load and start the image with the following command.
 
 ```sh
 $ docker load -i datacrafter-run.tar
@@ -45,7 +45,7 @@ $ pip install torch
 ```
 3. Download the repo
 
-4. Download demo data from [here](waittofill), and unpack it in the root folder 
+4. Download demo data from [here](https://drive.google.com/file/d/1se-uJddNTuUKAenlMDAu4dL99Xi-YjrT/view?usp=drive_link), and unpack it in the `demo` folder.
 
 5. Run backend
 
