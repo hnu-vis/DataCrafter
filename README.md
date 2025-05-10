@@ -8,6 +8,7 @@ $ cd M2M/
 $ pip install -r requirements.txt
 $ python train.py --device cuda
 ```
+The results will be saved in ```/root/DataCrafter/M2M/results/M2M```.
 ## Install environment and run for the system
 
 ### Option 1: Docker (recommended)
