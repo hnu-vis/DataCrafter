@@ -1054,7 +1054,7 @@ class M2MTrainer:
         return words_frequency, image_info
 
     def prepare_treecut(self):
-        tree = HierarchicalTree(self.base_path,"root")
+        tree = HierarchicalTree(self.base_path,"root","")
         tree.prepare_info(self.path)
         tree_dict = tree.load_high_level_clusters()
         root = tree.create_hierarchy()
