@@ -1,11 +1,17 @@
 # DataCrafter
 
 This is the source code for our paper "Human-Guided Image Generation for Small-Scale Training Datasets Expansion."
-
-## Install environment and run
+## Replicate the results of M2M
+If you'd like to reproduce the projection results in the paper, please follow the commands below.
+```sh
+$ cd M2M/
+$ pip install -r requirements.txt
+$ python train.py --device cuda
+```
+## Install environment and run for the system
 
 ### Option 1: Docker (recommended)
-1. The easiest way to install a environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](https://drive.google.com/file/d/1-KQuDaHJ4JtRt-w98Qhw0cefX8iOIX0g/view?usp=drive_link). You can load and start the image with the following command.
+1. The easiest way to install an environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](https://drive.google.com/file/d/1-KQuDaHJ4JtRt-w98Qhw0cefX8iOIX0g/view?usp=drive_link). You can load and start the image with the following command.
 
 ```sh
 $ docker load -i datacrafter-run.tar
