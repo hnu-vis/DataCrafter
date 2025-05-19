@@ -1,6 +1,8 @@
 # DataCrafter
 
 This is the source code for our paper "Human-Guided Image Generation for Small-Scale Training Datasets Expansion."
+
+This project uses [python 3.10](https://www.python.org/), [cuda 11.8](https://developer.nvidia.com/cuda-toolkit), and [torch 2.3.0](https://pytorch.org/). Go check it out if you don't have them installed.
 ## Replicate the results of M2M
 If you'd like to reproduce the projection results in the paper, please follow the commands below.
 ```sh
@@ -9,7 +11,8 @@ $ pip install -r requirements.txt
 $ python train.py --device cuda
 ```
 The results will be saved in ```/root/DataCrafter/M2M/results/M2M```.
-## Install environment and run for the system
+The training was performed on an NVIDIA A100 GPU. The total training time was under 30 minutes, and the peak video memory usage did not exceed 4 GB. 
+## Install the environment and run for the system
 
 ### Option 1: Docker (recommended)
 1. The easiest way to install an environment to run the demo is to use docker. We have packaged all the environment and code into a compressed image package. Please download it from  [datacrafter-run.tar](https://drive.google.com/file/d/1-KQuDaHJ4JtRt-w98Qhw0cefX8iOIX0g/view?usp=drive_link). You can load and start the image with the following command.
@@ -45,7 +48,7 @@ $ npm run serve
 ### Option 2: Install with python and node.js
 1. This project uses [python 3.10](https://www.python.org/), [cuda 11.8](https://developer.nvidia.com/cuda-toolkit), and [torch 2.3.0](https://pytorch.org/). Go check it out if you don't have them installed.
 
-2. install python package.
+2. Install python package.
 ```sh
 $ pip install -r requirements.txt
 $ pip install torch
