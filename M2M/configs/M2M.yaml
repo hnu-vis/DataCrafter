@@ -1,0 +1,29 @@
+exp_params:
+  dataset: "pets"
+  input_dims: 768   # (28, 28, 1)
+  LR: 0.001
+  batch_size: 100
+  text_batch_size: 24
+  n_neighbors: 15
+  optimizer: "adam" # adam or sgd
+  scheduler: "multi_step" # cosine or multi_step or on_plateau
+  temperature: 0.15
+  temperature_text: 0.1
+  gradient_redefine: True
+  separate_upper: 0.05
+  separation_begin_ratio: 0.25
+  steady_begin_ratio: 0.875
+  method: "M2M"
+  image_image_loss: 2
+  image_text_loss: 1
+  text_image_cluster_loss: 0.1
+  text_text_loss: 0.00001
+  stability_loss: 0
+  init_epoch: 700
+  base_path: "/root/DataCrafter/M2M/backend/data"
+
+training_params:
+  epoch_nums: 1000
+  epoch_print_inter_ratio: 0.1
+  val_inter_ratio: 1
+  ckp_inter_ratio: 1
