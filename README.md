@@ -81,3 +81,15 @@ If you have any problem about this code, feel free to contact
 - feilv@hnu.edu.cn
 
 or describe your problem in Issues.
+
+## Citation 
+If you find our work inspiring or use our code in your research, please cite our work:
+```sh
+@article{chen2025human,
+  title={Human-guided image generation for expanding small-scale training image datasets},
+  author={Chen, Changjian and Lv, Fei and Guan, Yalong and Wang, Pengcheng and Yu, Shengjie and Zhang, Yifan and Tang, Zhuo},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2025},
+  publisher={IEEE}
+}
+```
